@@ -4,10 +4,7 @@ import com.oracle.truffle.api.CallTarget;
 import com.oracle.truffle.api.Truffle;
 import com.oracle.truffle.api.TruffleLanguage;
 import com.oracle.truffle.api.nodes.RootNode;
-import com.oracle.truffle.api.source.Source;
-import fr.mleduc.explangtruffle.nodes.nodes.nodes.ELTAddNodeGen;
-import fr.mleduc.explangtruffle.nodes.nodes.nodes.ELTLiteralNode;
-import fr.mleduc.explangtruffle.nodes.nodes.nodes.ELTRootNode;
+import fr.mleduc.explangtruffle.nodes.nodes.nodes.*;
 
 @TruffleLanguage.Registration(id = "etl", name = "ELT",
         version = "0.12", mimeType = ELTLanguage.MIME_TYPE)
@@ -33,8 +30,12 @@ public class ELTLanguage extends TruffleLanguage<ELTContext> {
 
     @Override
     protected CallTarget parse(ParsingRequest request) throws Exception {
-        Source source = request.getSource();
-        RootNode evalMain = new ELTRootNode(this, ELTAddNodeGen.create(new ELTLiteralNode(1), new ELTLiteralNode(2)));
+        ELTAddNode p1 = ELTAddNodeGen.create(new ELTLiteralNode(1), new ELTLiteralNode(2));
+        ELTAddNode p2 = ELTAddNodeGen.create(ELTSubNodeGen.create(new ELTLiteralNode(42), new ELTLiteralNode(10)), new ELTLiteralNode(5));
+        ELTMultNode p3 = ELTMultNodeGen.create(new ELTLiteralNode(100), p2);
+        ELTDivNode p4 = ELTDivNodeGen.create(p3, new ELTLiteralNode(5));
+        ELTDivNode p5 = ELTDivNodeGen.create(new ELTLiteralNode(5), new ELTLiteralNode(4));
+        final RootNode evalMain = new ELTRootNode(this, p4);
         return Truffle.getRuntime().createCallTarget(evalMain);
     }
 }
