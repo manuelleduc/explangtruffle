@@ -11,7 +11,19 @@ import com.oracle.truffle.api.nodes.UnexpectedResultException;
 public abstract class ELTExpressionNode extends Node {
     public abstract Object executeGeneric(VirtualFrame frame);
 
-    public long executeLong(VirtualFrame frame) throws UnexpectedResultException {
-        return ELTTypesGen.expectLong(executeGeneric(frame));
+    public int executeInt(VirtualFrame frame) throws UnexpectedResultException {
+        return ELTTypesGen.expectInteger(executeGeneric(frame));
+    }
+
+    public boolean executeBool(VirtualFrame frame) throws UnexpectedResultException {
+        return ELTTypesGen.expectBoolean(executeGeneric(frame));
+    }
+
+    public float executeFloat(VirtualFrame frame) throws UnexpectedResultException {
+        return ELTTypesGen.expectFloat(executeGeneric(frame));
+    }
+
+    public String executeString(VirtualFrame frame) throws UnexpectedResultException {
+        return ELTTypesGen.expectString(executeGeneric(frame));
     }
 }

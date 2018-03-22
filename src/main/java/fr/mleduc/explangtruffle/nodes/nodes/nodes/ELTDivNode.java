@@ -7,7 +7,14 @@ import com.oracle.truffle.api.nodes.NodeInfo;
 public abstract class ELTDivNode extends ELTBinaryNode {
 
     @Specialization
-    protected long add(long left, long right) {
+    protected int div(int left, int right) {
         return left / right;
     }
+
+    @Specialization
+    protected float div(float left, float right) {
+        return left / right;
+    }
+
+   
 }

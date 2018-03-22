@@ -9,7 +9,19 @@ import com.oracle.truffle.api.nodes.NodeInfo;
 public abstract class ELTAddNode extends ELTBinaryNode {
 
     @Specialization
-    protected long add(long left, long right) {
+    protected int add(int left, int right) {
         return left + right;
     }
+
+    @Specialization
+    protected float add(float left, float right) {
+        return left + right;
+    }
+
+    @Specialization
+    protected String add(String left, String right) {
+        return left + right;
+    }
+
+
 }

@@ -1,14 +1,15 @@
-package fr.mleduc.explangtruffle.nodes.nodes.nodes;
+package fr.mleduc.explangtruffle.nodes.nodes.nodes.values;
 
 import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.NodeInfo;
 import com.oracle.truffle.api.nodes.UnexpectedResultException;
+import fr.mleduc.explangtruffle.nodes.nodes.nodes.ELTExpressionNode;
 
-@NodeInfo(description = "long const")
-public final class ELTLiteralNode extends ELTExpressionNode {
+@NodeInfo(description = "int const")
+public final class ELTIntNode extends ELTExpressionNode {
     private final int value;
 
-    public ELTLiteralNode(int value) {
+    public ELTIntNode(int value) {
         this.value = value;
     }
 
@@ -18,7 +19,7 @@ public final class ELTLiteralNode extends ELTExpressionNode {
     }
 
     @Override
-    public long executeLong(VirtualFrame frame) throws UnexpectedResultException {
+    public int executeInt(VirtualFrame frame) throws UnexpectedResultException {
         return value;
     }
 }
