@@ -1,4 +1,4 @@
-package fr.mleduc.explangtruffle.nodes.nodes.nodes;
+package fr.mleduc.explangtruffle.nodes.nodes.nodes.binary;
 
 import com.oracle.truffle.api.dsl.Specialization;
 import com.oracle.truffle.api.nodes.NodeInfo;
