@@ -1,10 +1,14 @@
-package fr.mleduc.explangtruffle.nodes.nodes.nodes;
+package fr.mleduc.explangtruffle.nodes.nodes.nodes.statement;
 
 import com.oracle.truffle.api.frame.VirtualFrame;
+import com.oracle.truffle.api.nodes.NodeInfo;
 import com.oracle.truffle.api.nodes.UnexpectedResultException;
 import com.oracle.truffle.api.profiles.ConditionProfile;
+import fr.mleduc.explangtruffle.nodes.nodes.nodes.ELTExpressionNode;
+import fr.mleduc.explangtruffle.nodes.nodes.nodes.ELTStatementNode;
 
-public class ELTIfNode extends ELTExpressionNode {
+@NodeInfo(shortName = "if", description = "Conditional statement")
+public final class ELTIfNode extends ELTStatementNode {
 
     @Child
     private ELTExpressionNode testNode;
@@ -28,23 +32,20 @@ public class ELTIfNode extends ELTExpressionNode {
 
 
     @Override
-    public Object executeGeneric(VirtualFrame frame) {
+    public void executeVoid(VirtualFrame frame) {
         try {
             if (this.conditionProfile.profile(this.testResult(frame))) {
-                return this.thenNode.executeGeneric(frame);
+                this.thenNode.executeGeneric(frame);
             } else {
-                return this.elseNode.executeGeneric(frame);
+                this.elseNode.executeGeneric(frame);
             }
         } catch (UnexpectedResultException e) {
             e.printStackTrace();
         }
-        return null;
     }
 
     private boolean testResult(VirtualFrame frame) throws UnexpectedResultException {
-
         return this.testNode.executeBool(frame);
-
     }
 
 }

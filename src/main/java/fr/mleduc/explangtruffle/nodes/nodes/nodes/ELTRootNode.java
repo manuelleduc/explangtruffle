@@ -10,22 +10,21 @@ import com.oracle.truffle.api.nodes.RootNode;
 public class ELTRootNode extends RootNode {
 
     @Child
-    private ELTExpressionNode child;
+    private ELTStatementNode child;
 
-    public ELTRootNode(TruffleLanguage<?> language, ELTExpressionNode child) {
+    public ELTRootNode(TruffleLanguage<?> language, ELTStatementNode child) {
         super(language);
         this.child = child;
     }
 
-    protected ELTRootNode(TruffleLanguage<?> language, FrameDescriptor frameDescriptor, ELTExpressionNode child) {
+    public ELTRootNode(TruffleLanguage<?> language, FrameDescriptor frameDescriptor, ELTStatementNode child) {
         super(language, frameDescriptor);
         this.child = child;
     }
 
     @Override
     public Object execute(VirtualFrame frame) {
-        Object res = child.executeGeneric(frame);
-        System.out.println(res);
-        return res;
+        child.executeVoid(frame);
+        return null;
     }
 }

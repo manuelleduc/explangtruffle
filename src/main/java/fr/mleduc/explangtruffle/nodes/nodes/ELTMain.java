@@ -11,7 +11,9 @@ public class ELTMain {
     public static void main(String[] args) {
         out.println("== running on " + Truffle.getRuntime().getName());
         PolyglotEngine engine = PolyglotEngine.newBuilder().setIn(in).setOut(out).build();
-        Source source = Source.newBuilder("").mimeType(ELTLanguage.MIME_TYPE).name("YOLO").build();
+        Source source = Source.newBuilder("").mimeType(ELTLanguage.MIME_TYPE).name("ELT").build();
         PolyglotEngine.Value result = engine.eval(source);
+
+        engine.dispose();
     }
 }
