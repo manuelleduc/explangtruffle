@@ -3,7 +3,7 @@ package fr.mleduc.explangtruffle.nodes.values;
 import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.NodeInfo;
 import com.oracle.truffle.api.nodes.UnexpectedResultException;
-import fr.mleduc.explangtruffle.ELTExpressionNode;
+import fr.mleduc.explangtruffle.nodes.ELTExpressionNode;
 
 @NodeInfo(description = "string const")
 public final class ELTStringNode extends ELTExpressionNode {

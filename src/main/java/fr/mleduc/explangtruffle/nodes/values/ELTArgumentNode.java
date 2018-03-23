@@ -2,7 +2,7 @@ package fr.mleduc.explangtruffle.nodes.values;
 
 import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.profiles.BranchProfile;
-import fr.mleduc.explangtruffle.ELTExpressionNode;
+import fr.mleduc.explangtruffle.nodes.ELTExpressionNode;
 
 public class ELTArgumentNode extends ELTExpressionNode {
 

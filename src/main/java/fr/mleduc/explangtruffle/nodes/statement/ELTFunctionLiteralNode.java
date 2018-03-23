@@ -6,7 +6,7 @@ import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.NodeInfo;
 import fr.mleduc.explangtruffle.ELTContext;
 import fr.mleduc.explangtruffle.ELTFunction;
-import fr.mleduc.explangtruffle.ELTExpressionNode;
+import fr.mleduc.explangtruffle.nodes.ELTExpressionNode;
 import fr.mleduc.explangtruffle.ELTLanguage;
 
 import static com.oracle.truffle.api.CompilerDirectives.CompilationFinal;

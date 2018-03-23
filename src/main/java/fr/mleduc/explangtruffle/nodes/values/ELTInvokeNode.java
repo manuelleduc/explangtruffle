@@ -6,7 +6,7 @@ import com.oracle.truffle.api.instrumentation.StandardTags;
 import com.oracle.truffle.api.nodes.NodeInfo;
 import fr.mleduc.explangtruffle.ELTDispatchNode;
 import fr.mleduc.explangtruffle.ELTDispatchNodeGen;
-import fr.mleduc.explangtruffle.ELTExpressionNode;
+import fr.mleduc.explangtruffle.nodes.ELTExpressionNode;
 
 @NodeInfo(shortName = "invoke")
 public class ELTInvokeNode extends ELTExpressionNode {

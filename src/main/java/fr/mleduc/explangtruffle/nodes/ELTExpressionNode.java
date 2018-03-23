@@ -1,9 +1,11 @@
-package fr.mleduc.explangtruffle;
+package fr.mleduc.explangtruffle.nodes;
 
 import com.oracle.truffle.api.dsl.TypeSystemReference;
 import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.NodeInfo;
 import com.oracle.truffle.api.nodes.UnexpectedResultException;
+import fr.mleduc.explangtruffle.ELTTypes;
+import fr.mleduc.explangtruffle.ELTTypesGen;
 
 @TypeSystemReference(ELTTypes.class)
 @NodeInfo(description = "Abstract expression node")

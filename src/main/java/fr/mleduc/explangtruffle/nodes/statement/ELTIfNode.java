@@ -4,8 +4,8 @@ import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.NodeInfo;
 import com.oracle.truffle.api.nodes.UnexpectedResultException;
 import com.oracle.truffle.api.profiles.ConditionProfile;
-import fr.mleduc.explangtruffle.ELTStatementNode;
-import fr.mleduc.explangtruffle.ELTExpressionNode;
+import fr.mleduc.explangtruffle.nodes.ELTStatementNode;
+import fr.mleduc.explangtruffle.nodes.ELTExpressionNode;
 
 @NodeInfo(shortName = "if", description = "Conditional statement")
 public final class ELTIfNode extends ELTStatementNode {

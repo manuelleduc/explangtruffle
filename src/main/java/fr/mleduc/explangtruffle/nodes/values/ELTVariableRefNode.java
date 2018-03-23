@@ -4,7 +4,7 @@ import com.oracle.truffle.api.CompilerDirectives;
 import com.oracle.truffle.api.dsl.NodeField;
 import com.oracle.truffle.api.dsl.Specialization;
 import com.oracle.truffle.api.frame.*;
-import fr.mleduc.explangtruffle.ELTExpressionNode;
+import fr.mleduc.explangtruffle.nodes.ELTExpressionNode;
 
 @NodeField(name = "slot", type = FrameSlot.class)
 public abstract class ELTVariableRefNode extends ELTExpressionNode {

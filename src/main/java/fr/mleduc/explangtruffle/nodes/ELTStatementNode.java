@@ -1,4 +1,4 @@
-package fr.mleduc.explangtruffle;
+package fr.mleduc.explangtruffle.nodes;
 
 import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.Node;

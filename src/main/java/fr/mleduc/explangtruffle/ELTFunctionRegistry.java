@@ -2,6 +2,7 @@ package fr.mleduc.explangtruffle;
 
 import com.oracle.truffle.api.RootCallTarget;
 import com.oracle.truffle.api.Truffle;
+import fr.mleduc.explangtruffle.nodes.ELTRootNode;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -4,7 +4,7 @@ import com.oracle.truffle.api.CompilerAsserts;
 import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.ExplodeLoop;
 import com.oracle.truffle.api.nodes.NodeInfo;
-import fr.mleduc.explangtruffle.ELTStatementNode;
+import fr.mleduc.explangtruffle.nodes.ELTStatementNode;
 
 @NodeInfo(shortName = "block", description = "The node implementing a source code block")
 public final class ELTBlockNode extends ELTStatementNode {

@@ -3,8 +3,8 @@ package fr.mleduc.explangtruffle.nodes.statement;
 
 import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.NodeInfo;
-import fr.mleduc.explangtruffle.ELTExpressionNode;
-import fr.mleduc.explangtruffle.ELTStatementNode;
+import fr.mleduc.explangtruffle.nodes.ELTExpressionNode;
+import fr.mleduc.explangtruffle.nodes.ELTStatementNode;
 
 
 @NodeInfo(description = "Print a expression value")

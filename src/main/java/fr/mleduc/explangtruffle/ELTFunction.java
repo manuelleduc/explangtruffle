@@ -6,6 +6,7 @@ import com.oracle.truffle.api.Truffle;
 import com.oracle.truffle.api.interop.ForeignAccess;
 import com.oracle.truffle.api.interop.TruffleObject;
 import com.oracle.truffle.api.utilities.CyclicAssumption;
+import fr.mleduc.explangtruffle.nodes.ELTUndefinedFunctionRootNode;
 
 public class ELTFunction implements TruffleObject {
     /**
